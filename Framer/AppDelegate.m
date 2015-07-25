@@ -27,5 +27,29 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+- (IBAction)plusButtonClicked:(id)sender {
+    // Create the File Open Dialog class.
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    
+    // Enable the selection of files in the dialog.
+    [openDlg setCanChooseFiles:YES];
+    
+    // Multiple files not allowed
+    [openDlg setAllowsMultipleSelection:NO];
+    
+    // Can't select a directory
+    [openDlg setCanChooseDirectories:NO];
+    
+    // Display the dialog. If the OK button was pressed,
+    // process the files.
+    if ( [openDlg runModal] == NSModalResponseOK )
+    {
+        // Get an array containing the full filenames of all
+        // files and directories selected.
+        NSArray* urls = [openDlg URLs];
+        NSURL* fileUrl = [urls objectAtIndex:0];
+        [[NSWorkspace sharedWorkspace] setDesktopImageURL:fileUrl forScreen:[NSScreen mainScreen] options:nil error:nil];
+    }
+}
 
 @end
