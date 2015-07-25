@@ -7,16 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import <OBMenuBarWindow/OBMenuBarWindow.h>
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet OBMenuBarWindow *window;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    self.window.menuBarIcon = [NSImage imageNamed:@"MenuBarIcon"];
+    self.window.highlightedMenuBarIcon = [NSImage imageNamed:@"MenuBarIcon2"];
+    self.window.hasMenuBarIcon = YES;
+    self.window.attachedToMenuBar = YES;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

@@ -1,0 +1,10 @@
+PODS:
+  - OBMenuBarWindow (1.1.0)
+
+DEPENDENCIES:
+  - OBMenuBarWindow
+
+SPEC CHECKSUMS:
+  OBMenuBarWindow: 2be54c06ba113abffb5d59327b0a57f4c3e3146b
+
+COCOAPODS: 0.37.2
